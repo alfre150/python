@@ -1,0 +1,10 @@
+import json
+from collections import namedtuple
+
+data = '{"ticket": "00001"}'
+ambiente = '{"user": "AAAAA", "instancia":"AAAAAA"}'
+
+# Parse JSON into an object with attributes corresponding to dict keys.
+objData = json.loads(data, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
+objAmbiente = json.loads(ambiente, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
+print objData.ticket, objAmbiente.user, objAmbiente.instancia
