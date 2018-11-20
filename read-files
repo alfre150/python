@@ -1,0 +1,11 @@
+#Se ubica el archivo de para saber ticket e instacia
+fileEjecutar=open("tickets/Ejecutar.properties", "r")
+if fileEjecutar.mode == 'r':
+    listaParametros = fileEjecutar.readlines()
+    #for i in range(0, len(listaParametros)):
+    arrayTicket=listaParametros[0].split('=')
+    numeroTicket=arrayTicket[1]
+    arrayInstancia=listaParametros[1].split('=')
+    instancia=arrayInstancia[1]
+print(numeroTicket)
+print(instancia)
